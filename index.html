@@ -348,7 +348,7 @@
               : lang_code == "fa-IR"
               ? "selected"
               : "";
-          let option = <option ${selected} value="${lang_code}">${languages[lang_code]}</option>;
+          let option = `<option ${selected} value="${lang_code}">${languages[lang_code]}</option>`;
           tag.insertAdjacentHTML("beforeend", option);
         }
       });
@@ -365,7 +365,7 @@
           translateTo = selectTag[1].value;
         if (!text) return;
         toText.setAttribute("placeholder", "Translating...");
-        let apiUrl = https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo};
+        let apiUrl = `https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
         fetch(apiUrl)
           .then((res) => res.json())
           .then((data) => {
